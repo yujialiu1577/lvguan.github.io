@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CustomCan - 定制铝制啤酒罐</title>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            apple: {
+              blue: '#0066cc',
+              dark: '#1d1d1f',
+              light: '#86868b',
+              bg: '#f5f5f7'
+            }
+          },
+          fontFamily: {
+            sanfrancisco: [
+              '-apple-system',
+              'BlinkMacSystemFont',
+              'Segoe UI',
+              'Roboto',
+              'Helvetica Neue',
+              'Arial',
+              'sans-serif'
+            ]
+          }
+        }
+      }
+    }
+  </script>
+
+  <style type="text/tailwindcss">
+    @layer utilities {
+      .apple-btn {
+        @apply inline-flex items-center justify-center px-6 py-2.5 rounded-full text-sm font-medium transition-all duration-300;
+      }
+      .apple-btn-primary {
+        @apply bg-apple-blue text-white hover:bg-apple-blue/90;
+      }
+      .apple-btn-secondary {
+        @apply text-apple-blue border border-apple-blue/40 hover:bg-apple-blue/5;
+      }
+    }
+
+    body {
+      font-family: var(--font-sanfrancisco);
+      scroll-behavior: smooth;
+    }
+  </style>
+</head>
+
+<body class="bg-white font-sanfrancisco">
+
+<!-- ================= 导航栏 ================= -->
+<nav class="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-md text-white">
+  <div class="max-w-7xl mx-auto px-4">
+    <div class="flex justify-between items-center h-14">
+      <a href="index.html" class="text-lg font-medium">CustomCan</a>
+
+      <div class="hidden md:flex space-x-8 text-sm">
+        <a href="index.html" class="text-apple-blue">首页</a>
+        <a href="learn-more.html" class="hover:text-apple-blue">进一步了解</a>
+        <a href="custom-order.html" class="hover:text-apple-blue">选购铝制啤酒罐</a>
+        <a href="our-team.html" class="hover:text-apple-blue">我们的团队</a>
+        <a href="contact.html" class="hover:text-apple-blue">联系我们</a>
+      </div>
+
+      <button class="md:hidden" id="mobile-menu-btn">
+        <i class="fa fa-bars text-xl"></i>
+      </button>
+    </div>
+  </div>
+
+  <!-- 移动端菜单 -->
+  <div id="mobile-menu" class="hidden md:hidden bg-black/95">
+    <div class="px-4 py-4 space-y-3 text-sm">
+      <a href="index.html" class="block text-apple-blue">首页</a>
+      <a href="learn-more.html" class="block">进一步了解</a>
+      <a href="custom-order.html" class="block">选购铝制啤酒罐</a>
+      <a href="our-team.html" class="block">我们的团队</a>
+      <a href="contact.html" class="block">联系我们</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ================= 首屏 Hero（Apple 风格） ================= -->
+<section
+  class="relative min-h-screen flex items-center justify-center text-center bg-apple-bg overflow-hidden"
+  style="background-image:url('https://picsum.photos/1920/1080?beer-can-main'); background-size:cover; background-position:center;"
+>
+  <!-- 背景遮罩（Apple 官网常用） -->
+  <div class="absolute inset-0 bg-white/60"></div>
+
+  <!-- 内容 -->
+  <div class="relative z-10 max-w-5xl mx-auto px-6 pt-24">
+    <h1 class="text-4xl md:text-6xl font-semibold tracking-tight text-apple-dark mb-3">
+      CustomCan
+    </h1>
+
+    <p class="text-lg md:text-2xl text-apple-light mb-10">
+      新一代定制铝制啤酒罐，为品牌而生。
+    </p>
+
+    <!-- 按钮：始终水平 -->
+    <div class="flex flex-row flex-wrap justify-center gap-5">
+      <a href="learn-more.html" class="apple-btn apple-btn-primary">
+        进一步了解
+      </a>
+      <a href="custom-order.html" class="apple-btn apple-btn-secondary">
+        选购铝制啤酒罐
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 第二屏 ================= -->
+<section
+  class="min-h-[80vh] flex items-center justify-center text-center bg-white"
+  style="background-image:url('https://picsum.photos/1920/1080?beer-can-variety'); background-size:cover; background-position:center;"
+>
+  <div class="max-w-4xl mx-auto px-6">
+    <h2 class="text-4xl md:text-5xl font-semibold text-apple-dark mb-3">
+      系列定制
+    </h2>
+    <p class="text-lg md:text-xl text-apple-light mb-8">
+      用包装定义品牌，让每一款都独一无二。
+    </p>
+
+    <div class="flex flex-row justify-center gap-5">
+      <a href="learn-more.html" class="apple-btn apple-btn-primary">进一步了解</a>
+      <a href="custom-order.html" class="apple-btn apple-btn-secondary">查看案例</a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 页脚 ================= -->
+<footer class="bg-apple-bg py-12">
+  <div class="max-w-7xl mx-auto px-6 text-sm text-apple-light">
+    <div class="flex flex-col md:flex-row justify-between gap-6 mb-8">
+      <div>© 2026 CustomCan</div>
+      <div class="flex gap-6">
+        <a href="#" class="hover:text-apple-blue">微信</a>
+        <a href="#" class="hover:text-apple-blue">微博</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('mobile-menu-btn').onclick = () => {
+    document.getElementById('mobile-menu').classList.toggle('hidden')
+  }
+</script>
+
+</body>
+</html>
